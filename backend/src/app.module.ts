@@ -3,6 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { BackupModule } from './backup/backup.module';
+import { FetchIpModule } from './fetch-ip/fetch-ip.module';
 
 @Module({
   imports: [TypeOrmModule.forRoot({
@@ -14,7 +15,7 @@ import { BackupModule } from './backup/backup.module';
     database: 'darek',
     entities: [],
     synchronize: true,
-  }), BackupModule
+  }), BackupModule, FetchIpModule
 ],
   controllers: [AppController],
   providers: [AppService],
